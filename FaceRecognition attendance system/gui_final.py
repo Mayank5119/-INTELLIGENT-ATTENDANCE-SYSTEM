@@ -194,9 +194,9 @@ while 1:
 
     save_in_sheet(class_strength, present, curr_period, month, today_date)
     temperature = "NA"
-    # gui(present, predicted_name, "p", curr_period, curr_time, start_time , temperature , img )
+    gui(present, predicted_name, "p", curr_period, curr_time, start_time , temperature , img )
     # print(temperature)
-    print("M")
+
     print("P")
     print()
     cv2.waitKey(0)  # Waits indefinitely until a key is pressed

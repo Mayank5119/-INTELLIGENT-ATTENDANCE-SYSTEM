@@ -48,15 +48,15 @@ def make_template():
                     col = 1 + d
                     if date_counter < 10:
                         if j == 9 or j == 11:
-                            date = "2020-" + str(j + 1) + "-" + '0' + str(date_counter)
+                            date = "2021-" + str(j + 1) + "-" + '0' + str(date_counter)
                         else:
-                            date = "2020-0" + str(j + 1) + "-" + '0' + str(date_counter)
+                            date = "2021-0" + str(j + 1) + "-" + '0' + str(date_counter)
 
                     else:
                         if j == 9 or j == 11:
-                            date = "2020-" + str(j + 1) + "-" + str(date_counter)
+                            date = "2021-" + str(j + 1) + "-" + str(date_counter)
                         else:
-                            date = "2020-0" + str(j + 1) + "-" + str(date_counter)
+                            date = "2021-0" + str(j + 1) + "-" + str(date_counter)
                     worksheets[j].write(1, col, date, cell_format_0)
                     date_counter = date_counter + 1
 
@@ -66,9 +66,9 @@ def make_template():
                 for d in range(1, 30, 1):
                     col = 1 + d
                     if date_counter < 10:
-                        date = "2020-02-" + '0' + str(date_counter)
+                        date = "2021-02-" + '0' + str(date_counter)
                     else:
-                        date = "2020-02-" + str(date_counter)
+                        date = "2021-02-" + str(date_counter)
                     worksheets[j].write(1, col, date, cell_format_0)
                     date_counter = date_counter + 1
 
@@ -78,14 +78,14 @@ def make_template():
                     col = 1 + d
                     if date_counter < 10:
                         if j == 10:
-                            date = "2020-" + str(j + 1) + "-" + '0' + str(date_counter)
+                            date = "2021-" + str(j + 1) + "-" + '0' + str(date_counter)
                         else:
-                            date = "2020-0" + str(j + 1) + "-" + '0' + str(date_counter)
+                            date = "2021-0" + str(j + 1) + "-" + '0' + str(date_counter)
                     else:
                         if j == 10:
-                            date = "2020-" + str(j + 1) + "-" + str(date_counter)
+                            date = "2021-" + str(j + 1) + "-" + str(date_counter)
                         else:
-                            date = "2020-0" + str(j + 1) + "-" + str(date_counter)
+                            date = "2021-0" + str(j + 1) + "-" + str(date_counter)
                     worksheets[j].write(1, col, date, cell_format_0)
                     date_counter = date_counter + 1
 
@@ -103,3 +103,5 @@ def make_template():
                 row += 1
 
         workbook.close()
+
+make_template()
