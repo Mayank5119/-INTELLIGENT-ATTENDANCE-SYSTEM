@@ -14,7 +14,7 @@ import sys
 import train as Train
 
 
-def gui(sid, name, status, curr_period, curr_time, start_time , temperature ,img):
+def gui(sid, name, status, curr_period, curr_time, start_time, temperature, img):
     if len(sid) == 0:
         return
     else:
@@ -28,10 +28,10 @@ def gui(sid, name, status, curr_period, curr_time, start_time , temperature ,img
             [sg.Text("SID here :" + str(sid), key='-SID-'), sg.Text("Name:" + str(name), key='-NAME-'),
              sg.Text("Attendance Status :" + str(status), key='-status-')],
             [sg.Text("Current Period :" + str(curr_period), key='-curr_period-'),
-            sg.Text("Time :" + str(curr_time) , key='-TIME-')],
-             # sg.Text("Attendance started at :" + str(start_time))],
+             sg.Text("Time :" + str(curr_time), key='-TIME-')],
+            # sg.Text("Attendance started at :" + str(start_time))],
             [sg.Text("Your temperature :" + str(temperature), key='-your_temp-')],
-           # [sg.Button('Exit', size=(10, 1))],
+            # [sg.Button('Exit', size=(10, 1))],
         ]
 
         window = sg.Window('Attendance System', layout, location=(800, 400), finalize=True)
@@ -177,7 +177,7 @@ while 1:
     face_recognizer.read('trainingData.yml')  # use this to load training data for subsequent runs
     # creating list to store present SID
     present = []
-
+    label = ""
     for face in faces_detected:
         (x, y, w, h) = face
         roi_gray = gray_img[y:y + h, x:x + h]
@@ -188,13 +188,11 @@ while 1:
         present.append(label)
 
     print(label, ":", predicted_name)
-    print("time :" ,curr_time)
-
-
+    print("time :", curr_time)
 
     save_in_sheet(class_strength, present, curr_period, month, today_date)
     temperature = "NA"
-    gui(present, predicted_name, "p", curr_period, curr_time, start_time , temperature , img )
+    gui(present, predicted_name, "p", curr_period, curr_time, start_time, temperature, img)
     # print(temperature)
 
     print("P")
